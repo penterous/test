@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker Portfolio</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", monospace;
+}
+
+/* ===== BODY ===== */
+body {
+    background: #050505;
+    color: #00ff88;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.9);
+    border-bottom: 1px solid #00ff88;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff88;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #00ff88;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    animation: glitch 1.5s infinite;
+}
+
+.hero span {
+    color: #ffffff;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: 1px solid #00ff88;
+    background: transparent;
+    color: #00ff88;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #00ff88;
+    color: black;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #00ff88;
+    display: inline-block;
+}
+
+/* ===== SKILLS ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #00ff88;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: #00ff88;
+    color: black;
+}
+
+/* ===== PROJECTS ===== */
+.project {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 3px solid #00ff88;
+}
+
+/* ===== CONTACT ===== */
+form {
+    max-width: 400px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: black;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+}
+
+button.submit {
+    width: 100%;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #00ff88;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #00ff88; }
+    50% { text-shadow: -2px -2px #ffffff; }
+    100% { text-shadow: 2px 2px #00ff88; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">⚡ H4CK3R</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>I AM <span>HACKER</span></h1>
+    <p>Cybersecurity | Pentest | Ethical Hacking</p>
+    <button>Access System</button>
+</section>
+
+<section id="about">
+    <h2>À propos</h2>
+    <p>
+        Hacker éthique passionné par la cybersécurité, l'analyse des vulnérabilités
+        et la sécurité offensive. Spécialisé en réseaux, Linux et pentest web.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Compétences</h2>
+    <div class="cards">
+        <div class="card">Linux / Kali</div>
+        <div class="card">Pentest Web</div>
+        <div class="card">Réseaux</div>
+        <div class="card">CTF</div>
+        <div class="card">Python</div>
+        <div class="card">Sécurité Offensive</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projets</h2>
+    <div class="project">🔐 Scanner de vulnérabilités web</div>
+    <div class="project">🕵️ Analyse réseau avec Wireshark</div>
+    <div class="project">💣 Challenges CTF</div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form>
+        <input type="text" placeholder="Nom">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button class="submit">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 | Hacker Portfolio | Stay Anonymous ☠️
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
